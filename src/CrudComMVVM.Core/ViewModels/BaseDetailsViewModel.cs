@@ -1,11 +1,11 @@
 ﻿namespace CrudComMVVM.Core.ViewModels
 {
-    public class BaseDetailsViewModel<TEntity> : BaseViewModel
+    public abstract class BaseDetailsViewModel<TEntity> : BaseViewModel, IDetailsViewModel<TEntity>
         where TEntity : BaseEntity, new()
     {
         #region Properties
 
-        public TEntity CurrentItem { get; }
+        public TEntity CurrentItem { get; set; }
 
         #endregion
     }
