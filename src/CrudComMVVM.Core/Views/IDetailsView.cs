@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CrudComMVVM.Core.Views
+﻿namespace CrudComMVVM.Core.Views
 {
-    public interface IDetailsView<TEntity>
+    public interface IDetailsView
+    {
+    }
+
+    public interface IDetailsView<TEntity> : IDetailsView
         where TEntity : BaseEntity, new()
     {
     }
