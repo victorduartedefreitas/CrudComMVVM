@@ -1,15 +1,15 @@
 ﻿using CrudComMVVM.Core;
 using System.Windows.Input;
 using System.Linq;
+using CrudComMVVM.Business.Entities;
 
 namespace CrudComMVVM.DesktopWFP.ViewModels
 {
-    public class PessoaViewModel : BaseViewModel<Business.Entities.Pessoa>
+    public class PessoaViewModel : BaseItemsViewModel<Pessoa>
     {
         #region Local Variables
 
         private ICommand _deleteCommand;
-        private ICommand _saveCommand;
         private ICommand _newCommand;
 
         #endregion
@@ -64,24 +64,6 @@ namespace CrudComMVVM.DesktopWFP.ViewModels
             SelectedItem = Items.FirstOrDefault();
         }
 
-        public bool CanSave()
-        {
-            return DetailsItem != null && DetailsItem.HasChanged;
-        }
-
-        public void Save()
-        {
-            if (Items.Any(f => f.Id == DetailsItem.Id))
-            {
-                var item = Items.Single(f => f.Id == DetailsItem.Id);
-                item = DetailsItem;
-            }
-            else
-            {
-                Items.Add(DetailsItem);
-            }
-        }
-
         public bool CanNew()
         {
             return true;
@@ -89,7 +71,7 @@ namespace CrudComMVVM.DesktopWFP.ViewModels
 
         public void New()
         {
-            DetailsItem = new Business.Entities.Pessoa();
+            //DetailsItem = new Business.Entities.Pessoa();
         }
 
         #endregion
