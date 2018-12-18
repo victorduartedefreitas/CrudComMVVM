@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CrudComMVVM.Core
+﻿namespace CrudComMVVM.Core
 {
-    public class BaseModel
+    public abstract class BaseModel
     {
     }
 }

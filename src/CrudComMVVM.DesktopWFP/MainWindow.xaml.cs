@@ -23,6 +23,7 @@ namespace CrudComMVVM.DesktopWFP
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModels.PessoaViewModel();
         }
     }
 }

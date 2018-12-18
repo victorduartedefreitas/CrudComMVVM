@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PessoaViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,10 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\CrudComMVVM.Business\CrudComMVVM.Business.csproj">
+      <Project>{8a28ec20-0726-4946-aa36-9b75682a25c3}</Project>
+      <Name>CrudComMVVM.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CrudComMVVM.Core\CrudComMVVM.Core.csproj">
       <Project>{f8822399-819d-42b9-b767-4eb948e55434}</Project>
       <Name>CrudComMVVM.Core</Name>

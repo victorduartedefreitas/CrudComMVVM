@@ -3,11 +3,12 @@ using System.Runtime.CompilerServices;
 
 namespace CrudComMVVM.Core
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         #region Properties
 
         public ICollection<string> ChangedProperties { get; } = new List<string>();
+        public bool HasChanged { get => ChangedProperties.Count > 0; }
 
         #endregion
 

@@ -12,19 +12,21 @@
             <RowDefinition Height="9*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Margin="3" Padding="3" Content="Novo" />
-            <Button Margin="3" Padding="3" Content="Editar" />
-            <Button Margin="3" Padding="3" Content="Apagar" />
+            <Button Margin="3" Padding="3" Content="Novo" Command="{Binding NewCommand}" />
+            <Button Margin="3" Padding="3" Content="Salvar" Command="{Binding SaveCommand}" />
+            <Button Margin="3" Padding="3" Content="Apagar" Command="{Binding DeleteCommand}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1"
                       HorizontalScrollBarVisibility="Visible"
                       VerticalScrollBarVisibility="Visible">
             <DataGrid AutoGenerateColumns="False"
-                      IsReadOnly="True">
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Items}"
+                      SelectedItem="{Binding SelectedItem}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" />
-                    <DataGridTextColumn Header="Nome" />
-                    <DataGridTextColumn Header="Telefone" />
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
+                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
